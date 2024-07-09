@@ -1,0 +1,12 @@
+:host {
+  flex-grow: 0;
+
+  min-width: 16rem;
+  
+  margin: 0.4rem 0.4rem 4.4rem 0.4rem;
+  
+  background-color: #171717;
+
+  border-radius: 10px;
+}
+
