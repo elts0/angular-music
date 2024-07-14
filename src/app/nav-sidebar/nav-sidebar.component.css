@@ -2,11 +2,76 @@
   flex-grow: 0;
 
   min-width: 16rem;
-  
-  margin: 0.4rem 0.4rem 4.4rem 0.4rem;
-  
+
+  margin: 0.4rem 0.4rem 5.4rem 0.4rem;
+
   background-color: #171717;
 
   border-radius: 10px;
 }
 
+.app-title {
+  padding: 1rem 2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: end;
+}
+
+.app-title img {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 5px;
+}
+
+.app-title span {
+  font-family: 'Teko', sans-serif;
+  font-size: 2rem;
+  line-height: 1;
+  color: #7e008c;
+}
+
+nav {
+  margin: 1rem;
+}
+
+nav ul {
+  list-style: none;
+
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+nav li {
+  width: 100%;
+}
+
+nav a {
+  display: flex;
+  align-items: end;
+  gap: 1.2rem;
+
+  width: 100%;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+
+  text-decoration: none;
+  color: inherit;
+  font-family: Teko, sans-serif;
+  font-size: 1.4rem;
+  line-height: 1;
+
+  transition: 0.4s;
+}
+
+nav a:hover, .active {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+nav svg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
