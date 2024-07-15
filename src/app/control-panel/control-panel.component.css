@@ -61,10 +61,15 @@
   border: none;
   opacity: 0.7;
 
-  height: 2.2rem;
-  width: 2.2rem;
+  height: 1.9rem;
+  width: 1.9rem;
 
   cursor: pointer;
+}
+
+#skip-back, #skip-fwd {
+  height: 2.3rem;
+  width: 2.3rem;
 }
 
 .control-buttons svg {
@@ -74,8 +79,8 @@
 
 #play-pause {
   opacity: 1;
-  height: 2.8rem;
-  width: 2.8rem;
+  height: 2.7rem;
+  width: 2.7rem;
 }
 
 .control-buttons button:hover {
@@ -92,5 +97,102 @@
 }
 
 .music-playback input {
-  width: 16rem;
+  width: 20rem;
+
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  background: #d0d0d0;
+  border-radius: 2px;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.music-playback input:hover {
+  opacity: 1;
+}
+
+.music-playback input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: #9000a0;
+  transform: scale(0, 0);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.music-playback input:hover::-webkit-slider-thumb {
+  transform: scale(1, 1);
+}
+
+
+.music-additional {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.music-additional svg {
+  height: 100%;
+  width: 100%;
+}
+
+.music-additional button {
+  background-color: inherit;
+  border: none;
+  opacity: 0.7;
+
+  height: 1.9rem;
+  width: 1.9rem;
+
+  cursor: pointer;
+}
+
+.music-additional button:hover {
+  opacity: 1;
+}
+
+.volume {
+  display: flex;
+  align-items: center;
+  margin: 0 1.4rem 0 0;
+}
+
+.volume input {
+  width: 6rem;
+
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  background: #d0d0d0;
+  border-radius: 2px;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.volume input:hover {
+  opacity: 1;
+}
+
+.volume input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: #9000a0;
+  transform: scale(0, 0);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.volume input:hover::-webkit-slider-thumb {
+  transform: scale(1, 1);
 }

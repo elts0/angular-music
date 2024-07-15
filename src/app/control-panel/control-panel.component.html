@@ -1,8 +1,11 @@
 <a href="#" class="current-music">
-  <img src="./examples/arctic-monkeys.png" alt="Album Cover" />
+  <img
+    [src]="'./examples/' + musicInfo.author + '/' + musicInfo.album + '.png'"
+    alt="Album Cover"
+  />
   <div class="music-info">
-    <span class="music-name">Knee Socks</span>
-    <span class="music-author">Arctic Monkeys</span>
+    <span class="music-name">{{ musicInfo.name }}</span>
+    <span class="music-author">{{ musicInfo.author }}</span>
   </div>
 </a>
 
@@ -70,7 +73,8 @@
       </svg>
     </button>
 
-    <button id="play-pause">
+    <button (click)="toggleStatus()" id="play-pause">
+      @if (status === 'paused') {
       <svg
         width="40"
         height="41"
@@ -83,6 +87,18 @@
           fill="white"
         />
       </svg>
+      } @else {
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect x="4" y="3" width="6" height="18" rx="2" fill="white" />
+        <rect x="14" y="3" width="6" height="18" rx="2" fill="white" />
+      </svg>
+      }
     </button>
 
     <button id="skip-fwd">
@@ -143,10 +159,200 @@
   </div>
 
   <div class="music-playback">
-    <span>0:41</span>
-    <input type="range" name="music-time" id="music-time">
-    <span>2:55</span>
+    <span>{{ playbackTime | playback }}</span>
+    <input
+      type="range"
+      name="music-time"
+      id="music-time"
+      min="0"
+      [max]="musicInfo.duration"
+      [(ngModel)]="playbackTime"
+    />
+    <span>{{ musicInfo.duration | playback }}</span>
   </div>
 </div>
 
-<div>Additional Stuff</div>
+<div class="music-additional">
+  <button>
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M3 16H5V22C5 22.5523 4.55228 23 4 23C3.44772 23 3 22.5523 3 22V16Z"
+        fill="white"
+      />
+      <path
+        d="M11 13H13V22C13 22.5523 12.5523 23 12 23C11.4477 23 11 22.5523 11 22V13Z"
+        fill="white"
+      />
+      <path
+        d="M3 2C3 1.44772 3.44772 1 4 1C4.55228 1 5 1.44772 5 2V11H3V2Z"
+        fill="white"
+      />
+      <path
+        d="M19 16H21V22C21 22.5523 20.5523 23 20 23C19.4477 23 19 22.5523 19 22V16Z"
+        fill="white"
+      />
+      <path
+        d="M19 2C19 1.44772 19.4477 1 20 1C20.5523 1 21 1.44772 21 2V11H19V2Z"
+        fill="white"
+      />
+      <path
+        d="M11 2C11 1.44772 11.4477 1 12 1C12.5523 1 13 1.44772 13 2V8H11V2Z"
+        fill="white"
+      />
+      <rect x="16" y="13" width="8" height="5" rx="2" fill="white" />
+      <rect x="8" y="6" width="8" height="5" rx="2" fill="white" />
+      <rect y="13" width="8" height="5" rx="2" fill="white" />
+    </svg>
+  </button>
+
+  <div class="volume">
+    <button (click)="toggleVolume()">
+      @if (volume === 0) {
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M17 3.94319C17 3.12982 16.0806 2.6567 15.4188 3.12946L10 7H7C5.89543 7 5 7.89543 5 9V15C5 16.1046 5.89543 17 7 17H7.22832L17 9.39981V3.94319ZM17 11.9335L10.2533 17.1809L15.4188 20.8705C16.0806 21.3433 17 20.8702 17 20.0568V11.9335Z"
+          fill="white"
+        />
+        <path
+          d="M21 5L3 19"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+      } @else if (volume < 50) {
+
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M13.4188 3.12946C14.0806 2.6567 15 3.12982 15 3.94319V20.0568C15 20.8702 14.0806 21.3433 13.4188 20.8705L8 17H5C3.89543 17 3 16.1046 3 15V9C3 7.89543 3.89543 7 5 7H8L13.4188 3.12946Z"
+          fill="white"
+        />
+        <path
+          d="M17.9938 16.9053C19.2347 15.6423 20 13.9105 20 12C20 10.0815 19.2282 8.34323 17.9781 7.0788"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+      } @else {
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M11.4188 3.12946C12.0806 2.6567 13 3.12982 13 3.94319V20.0568C13 20.8702 12.0806 21.3433 11.4188 20.8705L6 17H3C1.89543 17 1 16.1046 1 15V9C1 7.89543 1.89543 7 3 7H6L11.4188 3.12946Z"
+          fill="white"
+        />
+        <path
+          d="M15.9938 16.9053C17.2347 15.6423 18 13.9105 18 12C18 10.0815 17.2282 8.34323 15.9781 7.0788"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M18.7782 4.2218C20.7688 6.21241 22 8.96241 22 12C22 15.0375 20.7688 17.7875 18.7782 19.7782"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+      }
+    </button>
+
+    <input
+      type="range"
+      name="volume"
+      id="volume"
+      min="0"
+      max="100"
+      [(ngModel)]="volume"
+    />
+  </div>
+
+  <button>
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 14 14"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#clip0_1222_36774)">
+        <path
+          d="M1 3C1.27614 3 1.5 2.77614 1.5 2.5C1.5 2.22386 1.27614 2 1 2C0.723858 2 0.5 2.22386 0.5 2.5C0.5 2.77614 0.723858 3 1 3Z"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M4.5 2.5H13.5"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M1 7.5C1.27614 7.5 1.5 7.27614 1.5 7C1.5 6.72386 1.27614 6.5 1 6.5C0.723858 6.5 0.5 6.72386 0.5 7C0.5 7.27614 0.723858 7.5 1 7.5Z"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M4.5 7H13.5"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M1 12C1.27614 12 1.5 11.7761 1.5 11.5C1.5 11.2239 1.27614 11 1 11C0.723858 11 0.5 11.2239 0.5 11.5C0.5 11.7761 0.723858 12 1 12Z"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M4.5 11.5H13.5"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_1222_36774">
+          <rect width="14" height="14" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  </button>
+</div>
