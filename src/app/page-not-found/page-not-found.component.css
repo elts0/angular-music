@@ -1,0 +1,58 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+h2 {
+  font-family: 'Nunito', 'sans-serif';
+  font-size: 2.4rem;
+  font-weight: bold;
+
+  margin: 2.4rem 0 0.8rem 0;
+}
+
+p {
+  font-family: 'Nunito', 'sans-serif';
+  font-size: 1rem;
+  font-weight: 300;
+  opacity: 0.6;
+
+  margin: 0 0 1rem 0;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  margin-top: 2rem;
+}
+
+a {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.2rem;
+}
+
+a.home {
+  background-color: white;
+  border-radius: 2rem;
+  padding: 1rem 2.2rem;
+  color: #171717;
+  font-weight: 700;
+
+}
+
+a.help {
+  font-weight: 400;
+  font-size: 1.1rem;
+}
