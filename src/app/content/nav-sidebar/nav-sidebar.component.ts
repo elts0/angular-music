@@ -6,8 +6,12 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   standalone: true,
   imports: [RouterLink, RouterLinkActive],
   templateUrl: './nav-sidebar.component.html',
-  styleUrl: './nav-sidebar.component.css'
+  styleUrl: './nav-sidebar.component.css',
 })
 export class NavSidebarComponent {
+  state: 'full' | 'collapsed' = 'full';
 
+  toggleState() {
+    this.state = this.state === 'full' ? 'collapsed' : 'full';
+  }
 }

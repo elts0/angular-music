@@ -1,9 +1,9 @@
-<a routerLink="/" class="app-title">
+<a routerLink="/" class="app-title" [class.collapsed]="state === 'collapsed'">
   <img src="./app-logo.png" alt="Note Image" />
   <span>Angular Music</span>
 </a>
 
-<nav>
+<nav [class.collapsed]="state === 'collapsed'">
   <ul>
     <li>
       <a

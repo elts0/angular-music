@@ -1,16 +1,12 @@
 :host {
-  min-width: 18rem;
-
-  margin: 0.4rem 0.4rem 5.4rem 0.4rem;
-
   background-color: #171717;
-
   border-radius: 10px;
 }
 
 .app-title {
   padding: 1rem 2rem;
   display: flex;
+  justify-content: center;
   gap: 1rem;
   align-items: center;
 }
@@ -78,4 +74,18 @@ nav svg {
 
 .selected {
   background-color: rgba(255, 255, 255, 0.08);
+}
+
+
+.collapsed span {
+  display: none;
+}
+
+.collapsed a {
+  gap: 0;
+  justify-content: center;
+}
+
+.app-title.collapsed {
+  padding: 1rem;
 }

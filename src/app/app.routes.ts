@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
-import { ContentPanelComponent } from './content-panel/content-panel.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './features/page-not-found/page-not-found.component';
+import { HomeComponent } from './features/home/home.component';
 
 export const routes: Routes = [
   {
     path: '',
-    component: ContentPanelComponent,
+    component: HomeComponent,
     pathMatch: 'full'
   },
   // {
