@@ -42,11 +42,16 @@
   opacity: 0.6;
 }
 
+
 .control-music {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .control-buttons {
@@ -97,7 +102,7 @@
 }
 
 .music-playback input {
-  width: 20rem;
+  width: 26rem;
 
   -webkit-appearance: none;
   appearance: none;
