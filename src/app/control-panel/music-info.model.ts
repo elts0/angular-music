@@ -4,4 +4,5 @@ export type MusicInfo = {
   author: string;
   album: string;
   duration: number;
+  path: string;
 };

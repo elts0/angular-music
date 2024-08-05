@@ -7,5 +7,14 @@ export const musicData: MusicInfo[] = [
     author: 'Arctic Monkeys',
     album: 'AM',
     duration: 258,
+    path: './examples/Arctic Monkeys/Arctic Monkeys - Knee Socks.mp3',
   },
+  {
+    id: '1',
+    name: 'Too Sweet',
+    author: 'Hozier',
+    album: 'Unheard',
+    duration: 257,
+    path: './examples/Hozier/Hozier - Too Sweet.mp3',
+  }
 ];

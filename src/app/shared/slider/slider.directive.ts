@@ -7,7 +7,6 @@ import { Directive, ElementRef, HostBinding, inject, OnInit } from '@angular/cor
     '(click)': 'onClick()',
     '(mouseleave)': 'onMouseLeave()',
     '(mousemove)': 'onMouseMove()',
-    '(change)': 'onClick()'
   }
 })
 export class SliderDirective{

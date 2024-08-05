@@ -1,13 +1,21 @@
-<a href="#" class="current-music">
+<div class="current-music">
+  @if (musicInfo) {
   <img
-    [src]="'./examples/' + musicInfo.author + '/' + musicInfo.album + '.png'"
+    [src]="'./examples/' + musicInfo?.author + '/' + musicInfo?.album + '.png'"
     alt="Album Cover"
   />
+  } @else {
+  <img src="music/unselected-music.png" alt="Album Cover" />
+  }
   <div class="music-info">
-    <span class="music-name">{{ musicInfo.name }}</span>
-    <span class="music-author">{{ musicInfo.author }}</span>
+    <a [routerLink]="[musicInfo?.author, musicInfo?.id]" class="music-name">{{
+      musicInfo?.name || 'Name'
+    }}</a>
+    <a [routerLink]="[musicInfo?.author]" class="music-author">{{
+      musicInfo?.author || 'Author'
+    }}</a>
   </div>
-</a>
+</div>
 
 <div class="control-music">
   <div class="control-buttons">
@@ -51,7 +59,7 @@
       </svg>
     </button>
 
-    <button id="skip-back">
+    <button id="skip-back" (click)="previousTrack()">
       <svg
         width="30"
         height="31"
@@ -101,7 +109,7 @@
       }
     </button>
 
-    <button id="skip-fwd">
+    <button id="skip-fwd" (click)="nextTrack()">
       <svg
         width="30"
         height="31"
@@ -163,11 +171,11 @@
     <input
       type="range"
       min="0"
-      [max]="musicInfo.duration"
+      [max]="musicInfo?.duration"
       [(ngModel)]="playbackTime"
       appSlider
     />
-    <span>{{ musicInfo.duration | playback }}</span>
+    <span>{{ musicInfo?.duration | playback }}</span>
   </div>
 </div>
 
@@ -285,7 +293,14 @@
       }
     </button>
 
-    <input type="range" [min]="0" [max]="100" [(ngModel)]="volume" appSlider/>
+    <input
+      type="range"
+      [min]="0"
+      [max]="1"
+      [step]="0.01"
+      [(ngModel)]="volume"
+      appSlider
+    />
   </div>
 
   <button>
