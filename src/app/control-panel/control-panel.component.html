@@ -162,11 +162,10 @@
     <span>{{ playbackTime | playback }}</span>
     <input
       type="range"
-      name="music-time"
-      id="music-time"
       min="0"
       [max]="musicInfo.duration"
       [(ngModel)]="playbackTime"
+      appSlider
     />
     <span>{{ musicInfo.duration | playback }}</span>
   </div>
@@ -286,14 +285,7 @@
       }
     </button>
 
-    <input
-      type="range"
-      name="volume"
-      id="volume"
-      min="0"
-      max="100"
-      [(ngModel)]="volume"
-    />
+    <input type="range" [min]="0" [max]="100" [(ngModel)]="volume" appSlider/>
   </div>
 
   <button>

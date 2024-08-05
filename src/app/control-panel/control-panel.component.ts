@@ -2,11 +2,13 @@ import { Component, Input } from '@angular/core';
 import { MusicInfo } from './music-info.model';
 import { PlaybackPipe } from './playback.pipe';
 import { FormsModule } from '@angular/forms';
+import { SliderComponent } from "../shared/slider/slider.component";
+import { SliderDirective } from '../shared/slider/slider.directive';
 
 @Component({
   selector: 'app-control-panel',
   standalone: true,
-  imports: [PlaybackPipe, FormsModule],
+  imports: [PlaybackPipe, FormsModule, SliderComponent, SliderDirective],
   templateUrl: './control-panel.component.html',
   styleUrl: './control-panel.component.css',
 })
