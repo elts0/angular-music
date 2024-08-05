@@ -1,7 +1,7 @@
 <div class="current-music">
   @if (musicInfo) {
   <img
-    [src]="'./examples/' + musicInfo?.author + '/' + musicInfo?.album + '.png'"
+    [src]="'./examples/' + musicInfo.author + '/' + musicInfo.album + '.png'"
     alt="Album Cover"
   />
   } @else {
@@ -173,6 +173,7 @@
       min="0"
       [max]="musicInfo?.duration"
       [(ngModel)]="playbackTime"
+      [value]="playbackTime"
       appSlider
     />
     <span>{{ musicInfo?.duration | playback }}</span>
@@ -297,7 +298,8 @@
       type="range"
       [min]="0"
       [max]="1"
-      [step]="0.01"
+      [step]=".01"
+      [value]="volume"
       [(ngModel)]="volume"
       appSlider
     />

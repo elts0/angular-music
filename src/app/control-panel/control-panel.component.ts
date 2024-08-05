@@ -1,4 +1,14 @@
-import { afterNextRender, Component, inject, Input, OnInit } from '@angular/core';
+import {
+  afterNextRender,
+  Component,
+  ElementRef,
+  inject,
+  Input,
+  OnInit,
+  QueryList,
+  ViewChild,
+  ViewChildren,
+} from '@angular/core';
 import { MusicInfo } from './music-info.model';
 import { PlaybackPipe } from './playback.pipe';
 import { FormsModule } from '@angular/forms';
@@ -15,13 +25,18 @@ import { RouterLink } from '@angular/router';
 })
 export class ControlPanelComponent {
   musicInfo?: MusicInfo;
+  private currentTime: number = 0;
   savedVolume: number | null = null;
-  status: 'playing' | 'paused' = 'paused';
+  @ViewChildren(SliderDirective) sliders!: QueryList<SliderDirective>;
 
   private musicQueueService = inject(MusicQueueService);
 
   ngOnInit(): void {
-    this.musicQueueService.current$.subscribe({
+    this.musicQueueService.currentTime$.subscribe((time) => {
+      this.currentTime = time;
+    });
+
+    this.musicQueueService.currentMusic$.subscribe({
       next: (data: MusicInfo | undefined) => {
         this.musicInfo = data;
       },
@@ -30,8 +45,24 @@ export class ControlPanelComponent {
       },
       complete: () => {
         console.log('Observable completed');
-      }
+      },
     });
+  }
+
+  get status() {
+    return this.musicQueueService.status;
+  }
+
+  set status(value: 'playing' | 'paused') {
+    this.musicQueueService.status = value;
+  }
+
+  get playbackTime() {
+    return this.currentTime;
+  }
+
+  set playbackTime(value: number) {
+    this.musicQueueService.currentTime = value;
   }
 
   get volume() {
@@ -40,14 +71,6 @@ export class ControlPanelComponent {
 
   set volume(value) {
     this.musicQueueService.volume = value;
-  }
-
-  get playbackTime() {
-    return this.musicQueueService.playbackTime;
-  }
-
-  set playbackTime(time: number) {
-    this.musicQueueService.playbackTime = time;
   }
 
   toggleStatus() {

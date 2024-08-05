@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MusicInfo } from './music-info.model';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, interval, map, Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class MusicQueueService {
@@ -8,31 +8,61 @@ export class MusicQueueService {
   queueId: number = 0;
   current?: MusicInfo;
   audio = new Audio();
-
-  private currentSubject = new BehaviorSubject<MusicInfo | undefined>(
+  status: 'playing' | 'paused' = 'paused';
+  
+  private currentMusicSubject = new BehaviorSubject<MusicInfo | undefined>(
     undefined
   );
-  public current$: Observable<MusicInfo | undefined> =
-    this.currentSubject.asObservable();
+  public currentMusic$: Observable<MusicInfo | undefined> =
+  this.currentMusicSubject.asObservable();
+  
 
-  updateCurrent(newMusic: MusicInfo | undefined): void {
-    this.currentSubject.next(newMusic);
+  private currentTimeSubject: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  public currentTime$: Observable<number> = this.currentTimeSubject.asObservable();
+
+  constructor() {
+    this.load(0);
+
+    interval(500).pipe(
+      map(() => this.audio.currentTime)
+    ).subscribe(time => {
+      this.currentTimeSubject.next(time);
+      if (time === this.audio.duration) {
+        this.next();
+      }
+    });
+  }
+
+  set currentTime(value: number) {
+    this.audio.currentTime = value;
+    this.currentTimeSubject.next(value); // Update the observable
+  }
+
+  get currentTime(): number {
+    return this.audio.currentTime;
+  }
+
+  updateCurrentMusic(newMusic: MusicInfo | undefined): void {
+    this.currentMusicSubject.next(newMusic);
   }
 
   load(id: number) {
-    this.updateCurrent(this.queue[id]);
-    this.audio.src = this.currentSubject.value?.path || '';
+    this.updateCurrentMusic(this.queue[id]);
+    this.audio.src = this.currentMusicSubject.value?.path || '';
+    this.audio.load();
   }
 
   play() {
-    if (!this.currentSubject.value) {
+    if (!this.currentMusicSubject.value) {
       this.load(this.queueId);
     }
     this.audio.play();
+    this.status = 'playing';
   }
 
   stop() {
     this.audio.pause();
+    this.status = 'paused';
   }
 
   set volume(value: number) {
@@ -47,15 +77,12 @@ export class MusicQueueService {
     return this.audio.duration;
   }
 
-  get playbackTime() {
-    return this.audio.currentTime;
-  }
-
-  set playbackTime(time: number) {
-    this.audio.currentTime = time;
-  }
-
   next() {
+    if (this.queueId + 1 === this.queue.length) {
+      this.reset();
+      this.stop();
+      return;
+    }
     this.load(++this.queueId);
     this.play();
   }
