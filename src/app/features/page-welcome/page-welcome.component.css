@@ -82,3 +82,7 @@ a.learn-more {
   font-weight: 400;
   font-size: 1rem;
 }
+
+a.learn-more:hover {
+  text-decoration: underline;
+}

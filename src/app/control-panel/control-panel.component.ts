@@ -1,14 +1,4 @@
-import {
-  afterNextRender,
-  Component,
-  ElementRef,
-  inject,
-  Input,
-  OnInit,
-  QueryList,
-  ViewChild,
-  ViewChildren,
-} from '@angular/core';
+import { Component, inject, QueryList, ViewChildren } from '@angular/core';
 import { MusicInfo } from './music-info.model';
 import { PlaybackPipe } from './playback.pipe';
 import { FormsModule } from '@angular/forms';

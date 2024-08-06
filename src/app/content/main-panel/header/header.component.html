@@ -29,7 +29,7 @@
     </defs>
   </svg>
 
-  <input type="search" placeholder="Search the songs">
+  <input type="search" placeholder="Search the songs" />
 </div>
 
 <div class="management">
@@ -69,6 +69,7 @@
   <div class="profile">
     <button
       (click)="onProfileDropdown()"
+      (blur)="onProfileDropdown()"
       [class.hoverable]="!isProfileDropdown"
     >
       <img src="./examples/image.jpg" alt="profile picture" />
@@ -78,17 +79,13 @@
 
     <ul [style.display]="isProfileDropdown ? 'block' : 'none'">
       <li>
-        <a [routerLink]="['user', 'eltso_']" (click)="onProfileDropdown()">
-          Profile
-        </a>
+        <a [routerLink]="['user', 'eltso_']"> Profile </a>
       </li>
       <li>
-        <a [routerLink]="['preferences']" (click)="onProfileDropdown()">
-          Settings
-        </a>
+        <a [routerLink]="['preferences']"> Settings </a>
       </li>
       <li>
-        <button (click)="onProfileDropdown()">Logout</button>
+        <button>Logout</button>
       </li>
     </ul>
   </div>
