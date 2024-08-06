@@ -1,11 +1,23 @@
 :host {
   flex-grow: 1;
+  background-color: #171717;
 
   border-radius: 10px;
   overflow-y: auto;
   scrollbar-gutter: stable;
 }
 
+:host.starting-page {
+  background-color: #ac00b6;
+}
+
 div {
   padding: 1.4rem 1.2rem 0.6rem 1.2rem;
+}
+
+@media only screen and (max-width: 600px) {
+  :host {
+    background-color: inherit;
+    border-radius: 0;
+  }
 }

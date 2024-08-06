@@ -42,4 +42,5 @@ testem.log
 Thumbs.db
 
 # Example files
-/examples
+/public/examples
+src/app/dummy-data.ts

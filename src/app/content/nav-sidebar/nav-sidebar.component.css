@@ -64,7 +64,8 @@ nav a {
   transition: 0.4s;
 }
 
-nav a:hover, .active {
+nav a:hover,
+.active {
   background-color: rgba(255, 255, 255, 0.08);
 }
 
@@ -72,13 +73,11 @@ nav svg {
   width: 1.5rem;
   height: 1.5rem;
   color: #ac00b6;
-
 }
 
 .selected {
   background-color: rgba(255, 255, 255, 0.08);
 }
-
 
 .collapsed span {
   display: none;
@@ -91,4 +90,39 @@ nav svg {
 
 .app-title.collapsed {
   padding: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .app-title {
+    display: none;
+  }
+
+  nav {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 4rem;
+    width: 100%;
+    margin: 0;
+  }
+
+  nav ul {
+    height: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+  }
+
+  nav li {
+    height: 100%;
+  }
+
+  nav li span {
+    display: none;
+  }
+
+  nav li a {
+    justify-content: center;
+    height: 100%;
+  }
 }

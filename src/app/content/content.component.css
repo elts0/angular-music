@@ -9,3 +9,10 @@
   width: 0.6rem;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 600px) {
+  .divider-line {
+    display: none;
+  }
+}
+

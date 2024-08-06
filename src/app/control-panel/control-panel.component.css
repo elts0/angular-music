@@ -42,7 +42,6 @@
   opacity: 0.6;
 }
 
-
 .control-music {
   display: flex;
   flex-direction: column;
@@ -94,6 +93,7 @@
 
 .music-playback {
   font-size: 0.7rem;
+  position: relative;
 
   display: flex;
   justify-content: center;
@@ -199,4 +199,58 @@
 
 .volume input:hover::-webkit-slider-thumb {
   transform: scale(1, 1);
+}
+
+@media only screen and (max-width: 600px) {
+  .control-music {
+    position: static;
+    transform: none;
+    margin-right: 0.8rem;
+  }
+
+  .control-buttons button {
+    display: none;
+  }
+
+  .music-playback > * {
+    display: none;
+  }
+
+  .music-playback input {
+    display: none;
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+  }
+
+  #skip-back {
+    display: block;
+    height: 3.2rem;
+    width: 3.2rem;
+  }
+
+  #play-pause {
+    display: block;
+    height: 3.2rem;
+    width: 3.2rem;
+  }
+
+  #skip-fwd {
+    display: block;
+    height: 3.2rem;
+    width: 3.2rem;
+  }
+
+  .music-additional {
+    display: none;
+  }
+
+  :host {
+    bottom: 4rem;
+    padding: 0;
+    margin: 0.2rem 0;
+    background-color: #171717;
+    border-radius: 5px;
+    height: auto;
+  }
 }

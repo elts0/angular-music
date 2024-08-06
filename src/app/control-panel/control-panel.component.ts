@@ -63,6 +63,10 @@ export class ControlPanelComponent {
     this.musicQueueService.volume = value;
   }
 
+  get duration() {
+    return this.musicQueueService.duration;
+  }
+
   toggleStatus() {
     if (this.status === 'playing') {
       this.musicQueueService.stop();

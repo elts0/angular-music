@@ -171,12 +171,12 @@
     <input
       type="range"
       min="0"
-      [max]="musicInfo?.duration"
+      [max]="duration"
       [(ngModel)]="playbackTime"
       [value]="playbackTime"
       appSlider
     />
-    <span>{{ musicInfo?.duration | playback }}</span>
+    <span>{{ duration | playback }}</span>
   </div>
 </div>
 
@@ -365,3 +365,4 @@
     </svg>
   </button>
 </div>
+

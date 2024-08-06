@@ -13,4 +13,8 @@ export class HeaderComponent {
   onProfileDropdown() {
     this.isProfileDropdown = !this.isProfileDropdown;
   }
+
+  closeProfileDropdown() {
+    this.isProfileDropdown = false;
+  }
 }
