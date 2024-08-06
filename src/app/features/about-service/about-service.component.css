@@ -1,0 +1,84 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ac00b6;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  margin-top: 1rem;
+}
+
+.title h2 {
+  font-family: 'Nunito', 'sans-serif';
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.title p {
+  font-family: 'Nunito', 'sans-serif';
+  font-size: 1.4rem;
+  font-weight: 300;
+  opacity: 0.8;
+  margin: 0;
+}
+
+
+img {
+  height: 24rem;
+  width: 24rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+
+  margin: 3rem 0;
+}
+
+.info p {
+  text-align: center;
+  font-family: 'Nunito', 'sans-serif';
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin: 0;
+  max-width: 30rem;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+a {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+}
+
+a.home {
+  background-color: white;
+  border-radius: 2rem;
+  padding: 1rem 2.2em;
+  color: #171717;
+  font-weight: 700;
+}
+
+a.learn-more {
+  font-weight: 400;
+  font-size: 1rem;
+}
