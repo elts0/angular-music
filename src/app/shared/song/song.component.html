@@ -1,0 +1,75 @@
+<div class="music">
+  @if (musicData) {
+  <img
+    [src]="'./examples/' + musicData.author + '/' + musicData.album + '.png'"
+    alt="Album Cover"
+  />
+  } @else {
+  <img src="music/unselected-music.png" alt="Album Cover" />
+  }
+  <div class="music-info">
+    <a [routerLink]="[musicData.author, musicData.id]" class="music-name">{{
+      musicData.name || 'Name'
+    }}</a>
+    <a [routerLink]="[musicData.author]" class="music-author">{{
+      musicData.author || 'Author'
+    }}</a>
+  </div>
+  <svg
+    width="40"
+    height="41"
+    viewBox="0 0 40 41"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M33.6432 21.348C34.2699 20.9563 34.2699 20.0437 33.6432 19.652L9.86333 4.78958C9.19728 4.3733 8.33333 4.85215 8.33333 5.63758V35.3624C8.33333 36.1479 9.19728 36.6267 9.86333 36.2104L33.6432 21.348Z"
+      fill="white"
+    />
+  </svg>
+</div>
+
+<button class="about" (click)="onAbout()"><svg
+      width="8"
+      height="2"
+      viewBox="0 0 8 2"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M1 1.25C0.86193 1.25 0.75 1.13807 0.75 1C0.75 0.86193 0.86193 0.75 1 0.75"
+        stroke="white"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M1 1.25C1.13807 1.25 1.25 1.13807 1.25 1C1.25 0.86193 1.13807 0.75 1 0.75"
+        stroke="white"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M4 1.25C3.86193 1.25 3.75 1.13807 3.75 1C3.75 0.86193 3.86193 0.75 4 0.75"
+        stroke="white"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M4 1.25C4.13807 1.25 4.25 1.13807 4.25 1C4.25 0.86193 4.13807 0.75 4 0.75"
+        stroke="white"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M7 1.25C6.86193 1.25 6.75 1.13807 6.75 1C6.75 0.86193 6.86193 0.75 7 0.75"
+        stroke="white"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M7 1.25C7.1381 1.25 7.25 1.13807 7.25 1C7.25 0.86193 7.1381 0.75 7 0.75"
+        stroke="white"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg></button>

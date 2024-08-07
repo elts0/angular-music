@@ -1,2 +1,18 @@
 <h2>Welcome, eltso_</h2>
-<p>Keep track of new releases: </p>
+<div class="new-releases">
+  <p>Discover tranding songs</p>
+  <div class="songs-list">
+    @for (song of music; track song.id) {
+      <app-song [musicData]="song"></app-song>
+    }
+  </div>
+</div>
+
+<div class="genre-playlists">
+  <p>Listen to your favourite genre</p>
+  <div class="playlist-list">
+    @for (playlist of playlists; track playlist.id) {
+      <app-playlist [playlist]="playlist"></app-playlist>
+    }
+  </div>
+</div>

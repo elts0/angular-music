@@ -1,10 +1,11 @@
 :host {
   position: sticky;
   top: 0;
+  right: 0;
+  left: 0;
   padding: 0.6rem 1.2rem;
 
-  width: 100%;
-  background: #171717;
+  background: #171717f6;
 
   display: flex;
   flex-direction: row;
@@ -203,7 +204,8 @@ a svg {
   }
 
   :host {
-    background-color: inherit;
+    background-color: #00000000;
+    position: static;
   }
 
   .management {

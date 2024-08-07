@@ -1,4 +1,5 @@
 import { MusicInfo } from './control-panel/music-info.model';
+import { Playlist } from './playlist.model';
 
 export const musicData: MusicInfo[] = [
   {
@@ -20,14 +21,14 @@ export const musicData: MusicInfo[] = [
     name: 'Roots',
     author: 'Imagine Dragons',
     album: 'Roots',
-    path: './examples/Imagine Dragons/Imagine Dragons - Roots.mp3'
+    path: './examples/Imagine Dragons/Imagine Dragons - Roots.mp3',
   },
   {
     id: '3',
     name: 'Higher Ground',
     author: 'Imagine Dragons',
     album: 'Mercury',
-    path: './examples/Imagine Dragons/Imagine Dragons - Higher Ground.mp3'
+    path: './examples/Imagine Dragons/Imagine Dragons - Higher Ground.mp3',
   },
   {
     id: '4',
@@ -42,5 +43,40 @@ export const musicData: MusicInfo[] = [
     author: 'Hozier',
     album: 'Hozier',
     path: './examples/Hozier/Hozier - Take Me To Church.mp3',
+  },
+];
+
+export const playlists: Playlist[] = [
+  {
+    id: '0',
+    name: 'Rock',
+    logo: './examples/playlists/Rock.png',
+    author: 'eltso_',
+    description: 'Rock Music Playlist',
+    songs: ['0', '1', '2'],
+  },
+  {
+    id: '1',
+    name: 'Pop',
+    logo: './examples/playlists/Pop.png',
+    author: 'eltso_',
+    description: 'Pop Music Playlist',
+    songs: ['0', '1', '2'],
+  },
+  {
+    id: '2',
+    name: 'Indie',
+    logo: './examples/playlists/Indie.png',
+    author: 'eltso_',
+    description: 'Indie Music Playlist',
+    songs: ['0', '1', '2'],
+  },
+  {
+    id: '3',
+    name: 'Acoustic',
+    logo: './examples/playlists/Acoustic.png',
+    author: 'eltso_',
+    description: 'Acoustic Music Playlist',
+    songs: ['0', '1', '2'],
   },
 ];

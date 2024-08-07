@@ -86,3 +86,14 @@ a.learn-more {
 a.learn-more:hover {
   text-decoration: underline;
 }
+
+@media only screen and (max-width: 600px) {
+  img {
+    height: 16rem;
+    width: 16rem;
+  }
+
+  .info p {
+    max-width: 20rem;
+  }
+}

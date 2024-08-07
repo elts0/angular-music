@@ -3,6 +3,7 @@ import { PageNotFoundComponent } from './features/page-not-found/page-not-found.
 import { PageHomeComponent } from './features/page-home/page-home.component';
 import { PageWelcomeComponent } from './features/page-welcome/page-welcome.component';
 import { PageAboutComponent } from './features/page-about/page-about.component';
+import { PageExploreComponent } from './features/page-explore/page-explore.component';
 
 export const routes: Routes = [
   {
@@ -13,10 +14,14 @@ export const routes: Routes = [
     path: 'home',
     component: PageHomeComponent,
   },
-  {
-    path: 'about',
-    component: PageAboutComponent,
-  },
+  // {
+  //   path: 'explore',
+  //   component: PageExploreComponent,
+  // },
+  // {
+  //   path: 'about',
+  //   component: PageAboutComponent,
+  // },
   // {
   //   path: 'library',
   //   component: PageNotFoundComponent,

@@ -44,11 +44,11 @@ export class MusicQueueService {
 
   updateCurrentMusic(newMusic: MusicInfo | undefined): void {
     this.currentMusicSubject.next(newMusic);
+    this.audio.src = this.currentMusicSubject.value?.path || '';
   }
 
   load(id: number) {
     this.updateCurrentMusic(this.queue[id]);
-    this.audio.src = this.currentMusicSubject.value?.path || '';
     this.audio.load();
   }
 
