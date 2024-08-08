@@ -48,3 +48,18 @@ p {
 .songs-list > * {
   border-bottom: 1px solid #ffffff33;
 }
+
+@media all and (max-width: 600px) {
+  .songs-list {
+    grid-template-columns: 1fr;
+  }
+
+  .songs-list > *:nth-child(n) {
+    border: none;
+    border-bottom: 1px solid #ffffff33;
+  }
+
+  .songs-list > *:nth-child(1) {
+    border-top: 1px solid #ffffff33;
+  }
+}

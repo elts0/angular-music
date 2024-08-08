@@ -14,10 +14,10 @@ export const routes: Routes = [
     path: 'home',
     component: PageHomeComponent,
   },
-  // {
-  //   path: 'explore',
-  //   component: PageExploreComponent,
-  // },
+  {
+    path: 'explore',
+    component: PageExploreComponent,
+  },
   // {
   //   path: 'about',
   //   component: PageAboutComponent,

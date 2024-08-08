@@ -1,1 +1,9 @@
-<p>page-explore works!</p>
+<h2>Browse All Genres</h2>
+<div class="genres">
+  @for(genre of genres; track genre.id) {
+    <a [routerLink]="['genre', genre.name.split(' ').join('-')]">
+      <img [src]="genre.logo" alt="Genre Logo" />
+      <p>{{ genre.name }}</p>
+    </a>
+  }
+</div>

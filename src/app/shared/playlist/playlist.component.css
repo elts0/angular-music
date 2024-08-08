@@ -79,3 +79,21 @@ button svg {
   position: relative;
   left: 0.06rem;
 }
+
+@media all and (max-width: 600px) {
+  :host {
+    position: relative;
+    min-width: 10rem;
+    max-width: 10rem;
+  }
+
+  .name {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .description {
+    font-size: 0.7rem;
+    opacity: 0.7;
+  }
+}

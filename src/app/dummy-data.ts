@@ -1,4 +1,5 @@
 import { MusicInfo } from './control-panel/music-info.model';
+import { GenreInfo } from './genre.model';
 import { Playlist } from './playlist.model';
 
 export const musicData: MusicInfo[] = [
@@ -113,6 +114,69 @@ export const musicData: MusicInfo[] = [
     album: `By the Way`,
     logo: `./examples/music/Red Hot Chili Peppers/By the Way.png`,
     path: `./examples/music/Red Hot Chili Peppers/Red Hot Chili Peppers - Can't Stop.mp3`,
+  },
+];
+
+export const genres: GenreInfo[] = [
+  {
+    id: '0',
+    name: `Rock`,
+    logo: `./examples/genres/Rock.png`,
+  },
+  {
+    id: '1',
+    name: `Classical`,
+    logo: `./examples/genres/Classical.png`,
+  },
+  {
+    id: '2',
+    name: `Country`,
+    logo: `./examples/genres/Country.png`,
+  },
+  {
+    id: '3',
+    name: `Hip-Hop`,
+    logo: `./examples/genres/Hip-Hop.png`,
+  },
+  {
+    id: '4',
+    name: `Indie`,
+    logo: `./examples/genres/Indie.png`,
+  },
+  {
+    id: '5',
+    name: `Chill`,
+    logo: `./examples/genres/Chill.png`,
+  },
+  {
+    id: '6',
+    name: `K-Pop`,
+    logo: `./examples/genres/K-Pop.png`,
+  },
+  {
+    id: '7',
+    name: `Dance`,
+    logo: `./examples/genres/Dance.png`,
+  },
+  {
+    id: '8',
+    name: `Party`,
+    logo: `./examples/genres/Party.png`,
+  },
+  {
+    id: '9',
+    name: `Blues`,
+    logo: `./examples/genres/Blues.png`,
+  },
+  {
+    id: '10',
+    name: `Sleep`,
+    logo: `./examples/genres/Sleep.png`,
+  },
+  {
+    id: '11',
+    name: `Pop`,
+    logo: `./examples/genres/Pop.png`,
   },
 ];
 
