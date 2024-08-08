@@ -1,7 +1,7 @@
 <div class="music">
   @if (musicData) {
   <img
-    [src]="'./examples/' + musicData.author + '/' + musicData.album + '.png'"
+    [src]="musicData.logo"
     alt="Album Cover"
   />
   } @else {

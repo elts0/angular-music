@@ -74,3 +74,8 @@ button svg {
   height: 100%;
   width: 100%;
 }
+
+.play svg {
+  position: relative;
+  left: 0.06rem;
+}

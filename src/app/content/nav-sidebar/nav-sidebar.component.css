@@ -9,6 +9,7 @@
   justify-content: center;
   gap: 1rem;
   align-items: center;
+  white-space: nowrap;
 }
 
 .app-title img {
@@ -70,13 +71,25 @@ nav a:hover,
 }
 
 nav svg {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.8rem;
+  height: 1.8rem;
   color: #ac00b6;
 }
 
-.selected {
+a.selected {
   background-color: rgba(255, 255, 255, 0.08);
+}
+
+svg {
+  display: none;
+}
+
+a.selected .icon-bold {
+  display: inline;
+}
+
+a:not(.selected) .icon-inline {
+  display: inline;
 }
 
 .collapsed span {
@@ -93,6 +106,7 @@ nav svg {
 }
 
 @media only screen and (max-width: 600px) {
+
   .app-title {
     display: none;
   }
@@ -124,5 +138,9 @@ nav svg {
   nav li a {
     justify-content: center;
     height: 100%;
+  }
+
+  nav a:hover, .active, a.selected {
+    background-color: inherit;
   }
 }

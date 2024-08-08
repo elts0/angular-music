@@ -33,6 +33,7 @@ a {
 /* WebKit Browsers (Chrome, Safari) */
 ::-webkit-scrollbar {
   width: 14px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {

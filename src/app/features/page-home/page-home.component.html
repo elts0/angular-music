@@ -1,8 +1,8 @@
-<h2>Welcome, eltso_</h2>
+<h2>Welcome, User</h2>
 <div class="new-releases">
   <p>Discover tranding songs</p>
   <div class="songs-list">
-    @for (song of music; track song.id) {
+    @for (song of music.slice(0, 12); track song.id) {
       <app-song [musicData]="song"></app-song>
     }
   </div>

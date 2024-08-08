@@ -1,7 +1,7 @@
 <div class="current-music">
   @if (musicInfo) {
   <img
-    [src]="'./examples/' + musicInfo.author + '/' + musicInfo.album + '.png'"
+    [src]="musicInfo.logo"
     alt="Album Cover"
   />
   } @else {
