@@ -4,6 +4,7 @@ import { BehaviorSubject, interval, map, Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class MusicQueueService {
+  queueTabOpen = false;
   queue: MusicInfo[] = [];
   queueId: number = 0;
   current?: MusicInfo;
@@ -31,6 +32,10 @@ export class MusicQueueService {
         this.next();
       }
     });
+  }
+
+  toggleQueueTab() {
+    this.queueTabOpen = !this.queueTabOpen;
   }
 
   set currentTime(value: number) {
@@ -81,6 +86,7 @@ export class MusicQueueService {
     if (this.queueId + 1 === this.queue.length) {
       this.reset();
       this.stop();
+      this.queueId = 0;
       return;
     }
     this.load(++this.queueId);

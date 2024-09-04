@@ -5,11 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { SliderDirective } from '../shared/slider/slider.directive';
 import { MusicQueueService } from './music-queue.service';
 import { RouterLink } from '@angular/router';
+import { QueueComponent } from "./queue/queue.component";
 
 @Component({
   selector: 'app-control-panel',
   standalone: true,
-  imports: [PlaybackPipe, FormsModule, SliderDirective, RouterLink],
+  imports: [PlaybackPipe, FormsModule, SliderDirective, RouterLink, QueueComponent],
   templateUrl: './control-panel.component.html',
   styleUrl: './control-panel.component.css',
 })
@@ -97,5 +98,9 @@ export class ControlPanelComponent {
 
   previousTrack() {
     this.musicQueueService.previous();
+  }
+
+  toggleQueueTab() {
+    this.musicQueueService.toggleQueueTab();
   }
 }

@@ -1,0 +1,11 @@
+<p>Now Playing</p>
+<div class="current">
+  <app-song [musicData]="current"></app-song>
+</div>
+
+<p>Up Next</p>
+<div class="queue">
+  @for (song of songs; track song.id) {
+    <app-song [musicData]="song"></app-song>
+  }
+</div>

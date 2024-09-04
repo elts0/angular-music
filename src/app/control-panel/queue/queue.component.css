@@ -1,0 +1,19 @@
+:host {
+  background-color: black;
+  min-width: 22rem;
+  margin-left: 0.6rem;
+  border-radius: 10px;
+
+  background-color: #171717;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+
+  padding: 0.2rem 1rem;
+}
+
+p {
+  margin-top: 1.2rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}

@@ -1,10 +1,10 @@
-
 <div class="music-logo">
   @if (musicData) {
   <img [src]="musicData.logo" alt="Album Cover" />
   } @else {
   <img src="music/unselected-music.png" alt="Album Cover" />
   }
+
   <svg
     class="play-svg"
     width="40"
@@ -21,14 +21,13 @@
 </div>
 
 <div class="music-info">
-  <a [routerLink]="['/', musicData.author, musicData.id]" class="music-name">{{
+  <a [routerLink]="['/', musicData.author.replaceAll(' ', '-'), musicData.id]" class="music-name">{{
     musicData.name || 'Name'
   }}</a>
-  <a [routerLink]="['/', musicData.author]" class="music-author">{{
+  <a [routerLink]="['/', musicData.author.replaceAll(' ', '-')]" class="music-author">{{
     musicData.author || 'Author'
   }}</a>
 </div>
-
 
 <button class="about" (click)="onAbout()">
   <svg

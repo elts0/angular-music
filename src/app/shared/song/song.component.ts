@@ -3,7 +3,7 @@ import { RouterLink } from '@angular/router';
 import { MusicInfo } from '../../control-panel/music-info.model';
 import { musicData } from '../../dummy-data';
 import { MusicQueueService } from '../../control-panel/music-queue.service';
-import { PlaybackPipe } from "../../control-panel/playback.pipe";
+import { PlaybackPipe } from '../../control-panel/playback.pipe';
 
 @Component({
   selector: 'app-song',
@@ -21,6 +21,11 @@ export class SongComponent {
   musicQueueService = inject(MusicQueueService);
   onAbout() {}
   onPlaySong() {
+    this.musicQueueService.queue = [
+      ...this.musicQueueService.queue?.slice(0, this.musicQueueService.queueId),
+      this.musicData,
+      ...this.musicQueueService.queue?.slice(this.musicQueueService.queueId),
+    ];
     this.musicQueueService.updateCurrentMusic(this.musicData);
     this.musicQueueService.play();
   }

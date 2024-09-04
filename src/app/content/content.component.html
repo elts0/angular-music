@@ -1,3 +1,8 @@
 <app-nav-sidebar></app-nav-sidebar>
 <div class="divider-line" (click)="onToggleNavBar()"></div>
-<app-main-panel [class.starting-page]="router.isActive('/', true)"></app-main-panel>
+<app-main-panel
+  [class.starting-page]="router.isActive('/', true)"
+></app-main-panel>
+<app-queue
+  [style.display]="queueService.queueTabOpen ? 'block' : 'none'"
+></app-queue>

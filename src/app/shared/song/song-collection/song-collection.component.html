@@ -20,19 +20,19 @@
 </td>
 
 <td class="music-name">
-  <a [routerLink]="['/', musicData.author, musicData.id]">{{
+  <a [routerLink]="['/', musicData.author.replaceAll(' ', '-'), musicData.id]">{{
     musicData.name || 'Name'
   }}</a>
 </td>
 
 <td class="music-author">
-  <a [routerLink]="['/', musicData.author]">{{
+  <a [routerLink]="['/', musicData.author.replaceAll(' ', '-')]">{{
     musicData.author || 'Author'
   }}</a>
 </td>
 
 <td class="music-album">
-  <a [routerLink]="['/', musicData.author, musicData.album]">{{
+  <a [routerLink]="['/', musicData.author.replaceAll(' ', '-'), musicData.album.replaceAll(' ', '-')]">{{
     musicData.album || 'Album'
   }}</a>
 </td>
