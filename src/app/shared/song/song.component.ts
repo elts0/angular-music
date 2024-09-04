@@ -17,8 +17,6 @@ import { PlaybackPipe } from "../../control-panel/playback.pipe";
 })
 export class SongComponent {
   @Input({ required: true }) musicData!: MusicInfo;
-  @Input() display: 'default' | 'playlist' = 'default';
-
 
   musicQueueService = inject(MusicQueueService);
   onAbout() {}

@@ -9,11 +9,12 @@ import { musicData, playlists } from '../../dummy-data';
 import { MusicInfo } from '../../control-panel/music-info.model';
 import { SongComponent } from "../../shared/song/song.component";
 import { DurationPipe } from "./duration.pipe";
+import { SongCollectionComponent } from '../../shared/song/song-collection/song-collection.component';
 
 @Component({
   selector: 'app-page-playlist',
   standalone: true,
-  imports: [SongComponent, DurationPipe],
+  imports: [SongComponent, DurationPipe, SongCollectionComponent],
   templateUrl: './page-playlist.component.html',
   styleUrl: './page-playlist.component.css',
 })

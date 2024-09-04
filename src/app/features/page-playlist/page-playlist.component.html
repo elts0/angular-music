@@ -9,8 +9,19 @@
   </div>
 </div>
 
-<div class="songs">
-  @for (song of songs; track song.id) {
-  <app-song [musicData]="song" display="playlist"></app-song>
-  }
-</div>
+<table class="songs">
+  <thead>
+    <tr>
+      <th class="name" colspan="2">Song</th>
+      <th class="author">Author</th>
+      <th class="album">Album</th>
+      <th class="time" colspan="2">Time</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    @for (song of songs; track song.id) {
+    <tr app-song-collection [musicData]="song"></tr>
+    }
+  </tbody>
+</table>

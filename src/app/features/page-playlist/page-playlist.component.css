@@ -38,3 +38,20 @@
   opacity: 0.8;
   margin: 0;
 }
+
+table {
+  width: 100%;
+  border-spacing: 0 0.4rem;
+}
+
+thead th {
+  font-size: 1rem;
+  text-align: left;
+  padding-bottom: 0.8rem;
+  opacity: 0.6;
+  border-bottom: 1px solid white;
+}
+
+.author, .album {
+  width: 28%;
+}

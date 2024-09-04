@@ -1,4 +1,4 @@
-@if (display === 'default') {
+
 <div class="music-logo">
   @if (musicData) {
   <img [src]="musicData.logo" alt="Album Cover" />
@@ -28,44 +28,7 @@
     musicData.author || 'Author'
   }}</a>
 </div>
-} @else if (display === 'playlist') {
-<div class="music-logo">
-  @if (musicData) {
-  <img [src]="musicData.logo" alt="Album Cover" />
-  } @else {
-  <img src="music/unselected-music.png" alt="Album Cover" />
-  }
-  <svg
-    class="play-svg"
-    width="40"
-    height="41"
-    viewBox="0 0 40 41"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M33.6432 21.348C34.2699 20.9563 34.2699 20.0437 33.6432 19.652L9.86333 4.78958C9.19728 4.3733 8.33333 4.85215 8.33333 5.63758V35.3624C8.33333 36.1479 9.19728 36.6267 9.86333 36.2104L33.6432 21.348Z"
-      fill="white"
-    />
-  </svg>
-</div>
 
-<a [routerLink]="['/', musicData.author, musicData.id]" class="music-name">{{
-  musicData.name || 'Name'
-}}</a>
-
-<a [routerLink]="['/', musicData.author]" class="music-author">{{
-  musicData.author || 'Author'
-}}</a>
-
-<a
-  [routerLink]="['/', musicData.author, musicData.album]"
-  class="music-album"
-  >{{ musicData.album || 'Album' }}</a
->
-
-<p class="music-duration">{{ musicData.duration | playback }}</p>
-}
 
 <button class="about" (click)="onAbout()">
   <svg

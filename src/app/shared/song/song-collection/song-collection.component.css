@@ -1,6 +1,4 @@
 :host {
-  display: flex;
-  align-items: center;
   padding: 0.4rem 0;
   cursor: pointer;
 }
@@ -15,7 +13,6 @@
 
 .music-logo {
   position: relative;
-  margin-right: 0.6rem;
   height: 3rem;
   width: 3rem;
 }
@@ -37,24 +34,23 @@ img {
   transition: 0.2s;
 }
 
-.music-info {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
 .music-name {
-  font-size: 0.8rem;
+  padding-left: 0.6rem;
 }
 
-.music-author {
-  font-size: 0.7rem;
+.music-name,
+.music-author,
+.music-album {
+  font-size: 0.9rem;
+}
+
+.music-author,
+.music-album {
   opacity: 0.6;
-  width: 0;
-  min-width: fit-content;
 }
 
-.music-author:hover {
+.music-author a:hover ,
+.music-album a:hover {
   text-decoration: underline;
 }
 
@@ -63,7 +59,7 @@ img {
   opacity: 0.6;
 }
 
-.about {
+.about button {
   background-color: inherit;
   border: none;
   border-radius: 50%;
@@ -76,4 +72,14 @@ img {
 .about svg {
   width: 100%;
   height: 100%;
+}
+
+.music-duration p {
+  display: inline;
+  margin: 0;
+}
+
+.music-duration, .about {
+  width: 0;
+  min-width: fit-content;
 }
