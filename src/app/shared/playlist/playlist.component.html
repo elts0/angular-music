@@ -1,6 +1,6 @@
-<img [src]="playlist.logo" [routerLink]="['playlist', playlist.id]" alt="Playlist Logo" />
+<img [src]="playlist.logo" [routerLink]="['/playlist', playlist.id]" alt="Playlist Logo" />
 <div class="info">
-  <a class="name" [routerLink]="['playlist', playlist.id]">{{ playlist.name }}</a>
+  <a class="name" [routerLink]="['/playlist', playlist.id]">{{ playlist.name }}</a>
   <a class="description">{{ playlist.description }}</a>
 </div>
 <div class="control">

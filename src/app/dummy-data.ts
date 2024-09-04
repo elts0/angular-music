@@ -10,6 +10,7 @@ export const musicData: MusicInfo[] = [
     album: 'AM',
     logo: `./examples/music/Arctic Monkeys/AM.png`,
     path: `./examples/music/Arctic Monkeys/Arctic Monkeys - Knee Socks.mp3`,
+    duration: 257,
   },
   {
     id: '1',
@@ -18,6 +19,7 @@ export const musicData: MusicInfo[] = [
     album: 'Unheard',
     logo: `./examples/music/Hozier/Unheard.png`,
     path: './examples/music/Hozier/Hozier - Too Sweet.mp3',
+    duration: 251,
   },
   {
     id: '2',
@@ -26,6 +28,7 @@ export const musicData: MusicInfo[] = [
     album: 'Roots',
     logo: `./examples/music/Imagine Dragons/Roots.png`,
     path: './examples/music/Imagine Dragons/Imagine Dragons - Roots.mp3',
+    duration: 174,
   },
   {
     id: '3',
@@ -34,6 +37,7 @@ export const musicData: MusicInfo[] = [
     album: 'Mercury',
     logo: `./examples/music/Imagine Dragons/Mercury.png`,
     path: './examples/music/Imagine Dragons/Imagine Dragons - Higher Ground.mp3',
+    duration: 161,
   },
   {
     id: '4',
@@ -42,6 +46,7 @@ export const musicData: MusicInfo[] = [
     album: 'AM',
     logo: `./examples/music/Arctic Monkeys/AM.png`,
     path: './examples/music/Arctic Monkeys/Arctic Monkeys - Do I Wanna Know.mp3',
+    duration: 272,
   },
   {
     id: '5',
@@ -50,6 +55,7 @@ export const musicData: MusicInfo[] = [
     album: 'Hozier',
     logo: `./examples/music/Hozier/Hozier.png`,
     path: './examples/music/Hozier/Hozier - Take Me To Church.mp3',
+    duration: 241,
   },
   {
     id: '6',
@@ -58,6 +64,7 @@ export const musicData: MusicInfo[] = [
     album: 'Music for a While',
     logo: `./examples/music/Revolver/Music for a While.png`,
     path: './examples/music/Revolver/Revolver - Get Around Town.mp3',
+    duration: 139,
   },
   {
     id: '7',
@@ -66,6 +73,7 @@ export const musicData: MusicInfo[] = [
     album: `God Loves You When You're Dancing`,
     logo: `./examples/music/Vance Joy/God Loves You When You're Dancing.png`,
     path: './examples/music/Vance Joy/Vance Joy - Riptide.mp3',
+    duration: 204,
   },
   {
     id: '8',
@@ -74,6 +82,7 @@ export const musicData: MusicInfo[] = [
     album: `Death Stranding Timefall`,
     logo: `./examples/music/Missio/Death Stranding Timefall.png`,
     path: './examples/music/Missio/Missio - Sing To Me.mp3',
+    duration: 189,
   },
   {
     id: '9',
@@ -82,6 +91,7 @@ export const musicData: MusicInfo[] = [
     album: `Origins`,
     logo: `./examples/music/Imagine Dragons/Origins.png`,
     path: './examples/music/Imagine Dragons/Imagine Dragons - Burn Out.mp3',
+    duration: 273,
   },
   {
     id: '10',
@@ -90,6 +100,7 @@ export const musicData: MusicInfo[] = [
     album: `Winelight`,
     logo: `./examples/music/Grover Washington Jr/Winelight.png`,
     path: './examples/music/Grover Washington Jr/Grover Washington Jr - Just The Two Of Us.mp3',
+    duration: 235,
   },
   {
     id: '11',
@@ -98,6 +109,7 @@ export const musicData: MusicInfo[] = [
     album: `Providence`,
     logo: `./examples/music/Poor Man's Poison/Providence.png`,
     path: `./examples/music/Poor Man's Poison/Poor Man's Poison - C'mon Down.mp3`,
+    duration: 157,
   },
   {
     id: '12',
@@ -106,6 +118,7 @@ export const musicData: MusicInfo[] = [
     album: `Old Tunes EP`,
     logo: `./examples/music/Cosmo Sheldrake/Old Tunes EP.png`,
     path: `./examples/music/Cosmo Sheldrake/Cosmo Sheldrake - The Moss.mp3`,
+    duration: 242,
   },
   {
     id: '13',
@@ -114,6 +127,7 @@ export const musicData: MusicInfo[] = [
     album: `By the Way`,
     logo: `./examples/music/Red Hot Chili Peppers/By the Way.png`,
     path: `./examples/music/Red Hot Chili Peppers/Red Hot Chili Peppers - Can't Stop.mp3`,
+    duration: 279,
   },
 ];
 
@@ -186,7 +200,8 @@ export const playlists: Playlist[] = [
     name: 'Rock',
     logo: './examples/playlists/Rock.png',
     author: 'eltso_',
-    description: 'Rock Music Playlist',
+    description:
+      'A collection of powerful and energetic tracks featuring electric guitars, heavy drums, and passionate vocals',
     songs: ['0', '1', '2'],
   },
   {
@@ -194,7 +209,8 @@ export const playlists: Playlist[] = [
     name: 'Pop',
     logo: './examples/playlists/Pop.png',
     author: 'eltso_',
-    description: 'Pop Music Playlist',
+    description:
+      'A mix of the latest chart-topping hits and timeless classics with catchy melodies, infectious hooks, and upbeat rhythms',
     songs: ['0', '1', '2'],
   },
   {
@@ -202,7 +218,8 @@ export const playlists: Playlist[] = [
     name: 'Indie',
     logo: './examples/playlists/Indie.png',
     author: 'eltso_',
-    description: 'Indie Music Playlist',
+    description:
+      'A curated selection of tracks from independent and alternative artists, showcasing unique sounds, creative lyrics, and fresh perspectives',
     songs: ['0', '1', '2'],
   },
   {
@@ -210,7 +227,8 @@ export const playlists: Playlist[] = [
     name: 'Acoustic',
     logo: './examples/playlists/Acoustic.png',
     author: 'eltso_',
-    description: 'Acoustic Music Playlist',
+    description:
+      'A soothing collection of stripped-down, unplugged tracks that highlight the raw talent of artists through gentle guitar strums, intimate vocals, and minimal production',
     songs: ['0', '1', '2'],
   },
   {
@@ -218,7 +236,8 @@ export const playlists: Playlist[] = [
     name: 'Country',
     logo: './examples/playlists/Country.png',
     author: 'eltso_',
-    description: 'Country Music Playlist',
+    description:
+      'A heartfelt collection of tracks featuring twangy guitars, storytelling lyrics, and soulful melodies that capture the essence of life, love, and the open road',
     songs: ['0', '1', '2'],
   },
   {
@@ -226,7 +245,7 @@ export const playlists: Playlist[] = [
     name: 'Hip-Hop',
     logo: './examples/playlists/Hip-Hop.png',
     author: 'eltso_',
-    description: 'Hip-Hop Music Playlist',
+    description: `A dynamic playlist featuring the best of rap, beats, and rhythmic flows, with sharp lyrics, powerful basslines, and cutting-edge production`,
     songs: ['0', '1', '2'],
   },
 ];

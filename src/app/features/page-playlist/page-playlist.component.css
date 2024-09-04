@@ -1,0 +1,40 @@
+.playlist {
+  display: flex;
+  gap: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.playlist img {
+  height: 12rem;
+  width: 12rem;
+  border-radius: 6px;
+}
+
+.playlist-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.playlist-name {
+  font-size: 3.6rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.playlist-description {
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.9;
+  width: 40rem;
+  height: 4rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.playlist-info {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin: 0;
+}

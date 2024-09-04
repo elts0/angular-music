@@ -1,1 +1,16 @@
-<p>page-playlist works!</p>
+<div class="playlist">
+  <img [src]="playlist?.logo" alt="Playlist Logo" />
+  <div class="playlist-details">
+    <p class="playlist-name">{{ playlist?.name }}</p>
+    <p class="playlist-description">{{ playlist?.description }}</p>
+    <p class="playlist-info">
+      Made for User | {{ songs?.length }} songs, {{ totalDuration | duration }}
+    </p>
+  </div>
+</div>
+
+<div class="songs">
+  @for (song of songs; track song.id) {
+  <app-song [musicData]="song" display="playlist"></app-song>
+  }
+</div>

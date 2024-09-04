@@ -5,4 +5,5 @@ export type MusicInfo = {
   album: string;
   logo: string;
   path: string;
+  duration: number;
 };

@@ -1,7 +1,6 @@
 :host {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 0.4rem 0;
   cursor: pointer;
 }
@@ -10,29 +9,30 @@
   opacity: 0.6;
 }
 
-:host:hover .music svg {
+:host:hover .play-svg {
   opacity: 1;
 }
 
-.music {
+.music-logo {
   position: relative;
-  display: flex;
-  gap: 0.8rem;
-  align-items: center;
+  margin-right: 0.6rem;
+  height: 3rem;
+  width: 3rem;
 }
 
-.music svg {
+.play-svg {
   opacity: 0;
   height: 1.3rem;
   width: 1.3rem;
   position: absolute;
-  left: 0.8rem;
+  left: 0.9rem;
+  top: 0.9rem;
   transition: 0.2s;
 }
 
 img {
-  height: 2.8rem;
-  width: 2.8rem;
+  height: 100%;
+  width: 100%;
   border-radius: 4px;
   transition: 0.2s;
 }
@@ -40,18 +40,28 @@ img {
 .music-info {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 }
 
-.music-name {
+.music-info .music-name {
   font-size: 0.8rem;
 }
 
-.music-author {
+.music-info .music-author {
   font-size: 0.7rem;
   opacity: 0.6;
 }
 
-button {
+.music-author:hover, .music-album:hover {
+  text-decoration: underline;
+}
+
+.music-duration {
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+.about {
   background-color: inherit;
   border: none;
   border-radius: 50%;
@@ -61,7 +71,31 @@ button {
   cursor: pointer;
 }
 
-button svg {
+.about svg {
   width: 100%;
   height: 100%;
+}
+
+tr {
+  width: 100%;
+}
+
+.music-name {
+  flex-grow: 2;
+  max-width: 24rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.music-author {
+  flex-grow: 1;
+  max-width: 20rem;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+.music-album {
+  flex-grow: 1;
+  font-size: 0.8rem;
+  opacity: 0.6;
 }
